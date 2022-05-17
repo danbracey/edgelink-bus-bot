@@ -67,7 +67,7 @@ $discord->on(Event::INTERACTION_CREATE, function ( Interaction $interaction, Dis
             'name' => 'Driver: ',
             'value' => $BusData['ServiceDelivery']["VehicleMonitoringDelivery"]["VehicleActivity"]["Extensions"]["VehicleJourney"]["DriverRef"]
         ]);
-        $embed->setImage("https://maps.googleapis.com/maps/api/staticmap?center=" . $lat . "," . $long . "&size=500x400&key=" . $config['map_key'] . "&markers=color:blue%7C" .  $lat . "," . $long);
+        $embed->setImage("https://maps.googleapis.com/maps/api/staticmap?center=53.562528,-2.875634&size=500x400&key=" . $config['map_key'] . "&markers=color:blue%7C" .  $lat . "," . $long . "&zoom=14");
 
         $interaction->respondWithMessage(MessageBuilder::new()
             ->setContent("EL1 Bus Data")
