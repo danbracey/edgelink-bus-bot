@@ -29,6 +29,8 @@ $discord->on(Event::INTERACTION_CREATE, function ( Interaction $interaction, Dis
         $BusData = json_decode($json,TRUE);
         $lat = $BusData['ServiceDelivery']["VehicleMonitoringDelivery"]["VehicleActivity"]["MonitoredVehicleJourney"]["VehicleLocation"]["Latitude"];
         $long = $BusData['ServiceDelivery']["VehicleMonitoringDelivery"]["VehicleActivity"]["MonitoredVehicleJourney"]["VehicleLocation"]["Longitude"];
+        $timestamp = strtotime($BusData['ServiceDelivery']["VehicleMonitoringDelivery"]["ValidUntil"]);
+        $valid_date = date('d-m-Y H:i:s', $timestamp);
 
         $embed = new \Discord\Parts\Embed\Embed($discord);
         $embed->setTitle("EL1 Bus Finder");
@@ -36,9 +38,10 @@ $discord->on(Event::INTERACTION_CREATE, function ( Interaction $interaction, Dis
         $embed->setAuthor("Dan Bracey", "https://avatars.githubusercontent.com/u/16801642?v=4", "https://github.com/PenguinNexus");
         $embed->setColor("#0099ff");
         $embed->setType("rich");
+
         $embed->addField([
             'name' => 'Data Valid Until: ',
-            'value' => $BusData['ServiceDelivery']["VehicleMonitoringDelivery"]["ValidUntil"]
+            'value' => $valid_date
         ]);
         /**$embed->addField([
             'name' => 'Direction: ',
