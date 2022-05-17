@@ -1,0 +1,7 @@
+{
+    "require": {
+        "team-reflex/discord-php": "^7.0",
+        "simplito/elliptic-php": "^1.0",
+        "discord-php/slash": "^1.0"
+    }
+}
