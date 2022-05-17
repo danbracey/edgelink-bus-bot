@@ -35,7 +35,6 @@ $discord->on(Event::INTERACTION_CREATE, function ( Interaction $interaction, Dis
         $embed->setDescription("Location data for the Edge Hill Bus");
         $embed->setAuthor("Dan Bracey", "https://avatars.githubusercontent.com/u/16801642?v=4", "https://github.com/PenguinNexus");
         $embed->setColor("#0099ff");
-        $embed->setURL("https://discord.js.org/");
         $embed->setType("rich");
         $embed->addField([
             'name' => 'Data Valid Until: ',
