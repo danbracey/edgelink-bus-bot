@@ -36,8 +36,8 @@ $discord->on(Event::INTERACTION_CREATE, function ( Interaction $interaction, Dis
             $embed = new \Discord\Parts\Embed\Embed($discord);
             $embed->setTitle("EL1 Bus Finder");
             $embed->setDescription("Location data for the Edge Hill Bus");
-            $embed->setAuthor("Dan Bracey", "https://avatars.githubusercontent.com/u/16801642?v=4", "https://github.com/PenguinNexus");
-            $embed->setColor("#0099ff");
+            $embed->setAuthor("Dan Bracey", "https://avatars.githubusercontent.com/u/16801642?v=4", "https://github.com/PenguinNexus/edgelink-bus-bot");
+            $embed->setColor("#671e75");
             $embed->setType("rich");
 
             $embed->addField([
@@ -49,12 +49,8 @@ $discord->on(Event::INTERACTION_CREATE, function ( Interaction $interaction, Dis
                 'value' => $BusData['ServiceDelivery']["VehicleMonitoringDelivery"]["VehicleActivity"]["MonitoredVehicleJourney"]["OperatorRef"]
             ]);
             $embed->addField([
-                'name' => 'Longitude: ',
-                'value' => $long
-            ]);
-            $embed->addField([
-                'name' => 'Latitude: ',
-                'value' => $lat
+                'name' => 'Location (Lat, Long): ',
+                'value' => "(" . $lat . ", " . $long . ")"
             ]);
             $embed->addField([
                 'name' => 'Vehicle Reference: ',
