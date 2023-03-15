@@ -19,7 +19,9 @@ This tracker uses API data from the Government Bus Open Data Service (BODS) in o
 
 To install and use, you'll need the following:
 
-Add the Discord Application (Bot) you've created to the server you want to use the bot on. It requires Bot and Application (Slash) Commands scopes. Support for this is outside the scope of the project.
+Create a new application in the [Discord Developer Portal](https://discord.com/developers/applications), and create a Bot for this application. Copy/Generate the token for this bot, and add it to the config.json file.
+
+Add the Discord Application (Bot) you've created to the server you want to use the bot on. It requires Bot and Application (Slash) Commands scopes. You can add it to your Discord server with the following URL: https://discord.com/api/oauth2/authorize?client_id=<<Replace with Client ID (found in Discord Developer Portal)>>&permissions=0&scope=bot%20applications.commands
 
 Clone this repo, and copy config.example.json to config.json, replacing the values provided with the necessary tokens/ID values.
 
@@ -28,7 +30,7 @@ Make sure PHP & Composer is installed, run `composer install` and run `php index
 Once the bot is running, use the slash command /bus in a channel to view the current location data of the Edge Link Bus
 ## Authors
 
-- [@PenguinNexus](https://github.com/PenguinNexus)
+- [Dan Bracey](https://github.com/danbracey)
 
 
 ## Acknowledgements
